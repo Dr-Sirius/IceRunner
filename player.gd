@@ -4,10 +4,12 @@ extends CharacterBody3D
 @onready var gravity: float =  ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @export var speed: float = 5
+@export var sprint_speed: float = 5
 @export var jumps: int = 1
 @export var jump_height: float = 5.0
 @export var head: Node3D
 @export var camera: Camera3D
+
 # Exports/Sensitivities
 @export var cam_sens: float = 0.05
 # Export/Speed
@@ -31,21 +33,19 @@ var headbob_time: float = 0.0
 
 var isCaptured: bool = false
 var desire_dir: Vector3 = Vector3.ZERO
-var jump_velocity: int
+var jump_velocity: float
 
 var can_d_jump: bool = true
 var number_jumps: int
 var base_speed: float = 7
-var sprint_speed: float = 9:
-	set(n):
-		if n <= base_speed:
-			sprint_speed = base_speed + 0.1
-		else:
-			sprint_speed = n
+
+var just_on_ground: bool = false
+
 			
 var current_speed: float = base_speed
 
 func _ready():
+	$vel.text = str(velocity)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	is_captured = true
 	base_speed = speed
@@ -71,8 +71,17 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 	
 func _physics_process(delta: float) -> void:
+	$vel.text = str(snappedf((abs(velocity.x) + abs(velocity.z))/2,0.01))
 	
-	current_speed = base_speed if !Input.is_action_pressed("move_sprint") else sprint_speed
+	
+	
+	current_speed = base_speed
+	if Input.is_action_pressed("move_sprint"): current_speed = sprint_speed
+	if Input.is_action_just_pressed("move_break"):
+		velocity.z = lerp(velocity.z,0.1,0.7)
+		velocity.x = lerp(velocity.x,0.1,0.7)
+		
+		
 	
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back").normalized()
 	desire_dir = global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)
@@ -80,14 +89,14 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		
 		handle_ground_physics(delta)
-		
+		just_on_ground = true
 		#handle_ground_dash(delta)
 	else:
 		handle_air_physics(delta)
-		
+		just_on_ground = false
 		#handle_air_dash(delta)
 	
-	interact_with_rigidbody()
+	#interact_with_rigidbody()
 	move_and_slide()
 	
 func handle_ground_physics(delta) -> void:
@@ -114,8 +123,8 @@ func handle_ground_physics(delta) -> void:
 	
 func handle_air_physics(delta) -> void:
 	velocity.y -= gravity * delta
-	
-	if Input.is_action_just_pressed("jump") and can_d_jump and jumps > 1:
+	# just_on_ground is meant to allow late jumping
+	if Input.is_action_just_pressed("jump") and (can_d_jump and jumps > 1) or (just_on_ground and jumps == 0):
 		velocity.y += jump_velocity
 		
 		number_jumps += 1

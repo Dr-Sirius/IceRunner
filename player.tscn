@@ -7,10 +7,10 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4flbx"]
 
 [node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("head", "camera")]
-floor_stop_on_slope = false
 script = ExtResource("1_4flbx")
 head = NodePath("Head")
 camera = NodePath("Head/Camera3D")
+ground_friction = 0.01
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_sh265")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c6ufmqtnbu5wx"]
+[gd_scene load_steps=10 format=3 uid="uid://c6ufmqtnbu5wx"]
 
 [ext_resource type="PackedScene" uid="uid://bv4wvc0fg51in" path="res://player.tscn" id="2_4g0oj"]
 [ext_resource type="Material" uid="uid://bfdp4gcysg86f" path="res://ice.tres" id="2_cwt80"]
@@ -19,9 +19,12 @@ glow_enabled = true
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rh5xb"]
 friction = 0.11
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_cwt80"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_4g0oj"]
+size = Vector3(1, 1, 1.4450684)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4g0oj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cwt80"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -37,9 +40,35 @@ physics_material_override = SubResource("PhysicsMaterial_rh5xb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(14.698585, 0, 0, 0, 1, 0, 0, 0, 17.484327, 0, 0, 0)
-shape = SubResource("BoxShape3D_cwt80")
+shape = SubResource("BoxShape3D_4g0oj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(14.698585, 0, 0, 0, 1, 0, 0, 0, 24.904448, 0, 0, 0)
+material_override = ExtResource("2_cwt80")
+mesh = SubResource("BoxMesh_4g0oj")
+
+[node name="StaticBody3D7" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.878111, 19.634699)
+physics_material_override = SubResource("PhysicsMaterial_rh5xb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D7"]
+transform = Transform3D(14.698585, 0, 0, 0, 0.81915206, 10.028599, 0, -0.57357645, 14.322323, 0, 0, 0)
+shape = SubResource("BoxShape3D_cwt80")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D7"]
+transform = Transform3D(14.698585, 0, 0, 0, 0.81915206, 10.028599, 0, -0.57357645, 14.322323, 0, 0, 0)
+material_override = ExtResource("2_cwt80")
+mesh = SubResource("BoxMesh_4g0oj")
+
+[node name="StaticBody3D8" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.099136, 34.84599)
+physics_material_override = SubResource("PhysicsMaterial_rh5xb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D8"]
+transform = Transform3D(14.698585, 0, 0, 0, 1, 0, 0, 0, 17.484327, 0, 0, 0)
+shape = SubResource("BoxShape3D_cwt80")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D8"]
 transform = Transform3D(14.698585, 0, 0, 0, 1, 0, 0, 0, 17.484327, 0, 0, 0)
 material_override = ExtResource("2_cwt80")
 mesh = SubResource("BoxMesh_4g0oj")
@@ -105,13 +134,16 @@ transform = Transform3D(7.0414906, 0, 0, 0, 0.28975096, 0, 0, 0, 8.78391, 0, -0.
 shape = SubResource("BoxShape3D_cwt80")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
-transform = Transform3D(7.0414906, 0, 0, 0, 0.28975096, 0, 0, 0, 8.78391, 0, -0.21679401, 3.5281448)
+transform = Transform3D(7.0414906, 0, 0, 0, 0.28975096, 0, 0, 0, 8.78391, 0, -0.5157931, 3.6648731)
 material_override = ExtResource("2_cwt80")
 mesh = SubResource("BoxMesh_4g0oj")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_4g0oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.243984, 1.5, 4.567936)
-speed = 8.0
-headbob_frequency = 1.0
-ground_friction = 0.1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.52565384, 12.017612, 40.204792)
+floor_stop_on_slope = false
+floor_max_angle = 0.5235988
+speed = 10.0
+sprint_speed = 12.0
+air_move_speed = 2.0
+air_accel = 10.0
 auto_behop = false

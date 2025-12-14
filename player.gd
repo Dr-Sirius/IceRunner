@@ -40,8 +40,7 @@ var number_jumps: int
 var base_speed: float = 7
 
 var just_on_ground: bool = false
-
-			
+var last_col: KinematicCollision3D
 var current_speed: float = base_speed
 
 func _ready():
@@ -72,20 +71,14 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 func _physics_process(delta: float) -> void:
 	$vel.text = str(snappedf((abs(velocity.x) + abs(velocity.z))/2,0.01))
-	
-	
-	
+
 	current_speed = base_speed
 	if Input.is_action_pressed("move_sprint"): current_speed = sprint_speed
-	if Input.is_action_just_pressed("move_break"):
-		velocity.z = lerp(velocity.z,0.1,0.7)
-		velocity.x = lerp(velocity.x,0.1,0.7)
-		
-		
-	
+
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back").normalized()
-	desire_dir = global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)
 	
+	desire_dir = global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)
+
 	if is_on_floor():
 		
 		handle_ground_physics(delta)
@@ -97,7 +90,19 @@ func _physics_process(delta: float) -> void:
 		#handle_air_dash(delta)
 	
 	#interact_with_rigidbody()
+	var prev_vol = velocity
 	move_and_slide()
+	var collision = get_last_slide_collision()
+	
+	
+	if collision:
+		if last_col:
+			if rad_to_deg(last_col.get_angle()) > 30 and rad_to_deg(collision.get_angle()) < 30:
+				velocity = prev_vol * 2
+				move_and_slide()
+	
+		last_col = collision
+  
 	
 func handle_ground_physics(delta) -> void:
 	if (Input.is_action_just_pressed("jump") or (auto_behop and Input.is_action_pressed("jump"))) and jumps != 0:
@@ -119,7 +124,7 @@ func handle_ground_physics(delta) -> void:
 		new_speed /= velocity.length()
 	velocity *= new_speed
 	
-	headbob(delta)
+	#headbob(delta)
 	
 func handle_air_physics(delta) -> void:
 	velocity.y -= gravity * delta

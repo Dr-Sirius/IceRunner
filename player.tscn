@@ -13,7 +13,7 @@
 render_priority = 0
 shader = ExtResource("2_onrkg")
 shader_parameter/enable_fog = true
-shader_parameter/fog_color = Color(0.80826604, 0.88071287, 0.94073135, 1)
+shader_parameter/fog_color = Color(0.5487602, 0.7148864, 0.84194833, 1)
 shader_parameter/noise_color = Color(0.1701647, 0.5963976, 0.6830388, 1)
 shader_parameter/fog_distance = 300.0000142025
 shader_parameter/fog_fade_range = 50.0

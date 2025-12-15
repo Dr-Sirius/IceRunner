@@ -8,7 +8,7 @@ void vertex() {
 
 void fragment() {
 	EMISSION = color.xyz;
-	EMISSION.p = 1.0;
+	EMISSION.p = 5.0;
 }
 
 //void light() {

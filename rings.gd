@@ -27,10 +27,10 @@ func ring_entered(col: RaceRing):
 		rings[0].queue_free()
 		rings.remove_at(0)
 	elif col.current_color == RaceRing.FINISH and len(rings) == 1:
-		print("win")
+		Global.player_won.emit()
 		rings[0].queue_free()
 	else:
 		
-		print("wrong")
+		Global.player_wrong_way.emit()
 		
 		

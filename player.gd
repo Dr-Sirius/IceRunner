@@ -92,16 +92,10 @@ func _physics_process(delta: float) -> void:
 	#interact_with_rigidbody()
 	var prev_vol = velocity
 	move_and_slide()
-	var collision = get_last_slide_collision()
+
 	
 	
-	if collision:
-		if last_col:
-			if rad_to_deg(last_col.get_angle()) > 30 and rad_to_deg(collision.get_angle()) < 30:
-				velocity = prev_vol * 2
-				move_and_slide()
 	
-		last_col = collision
   
 	
 func handle_ground_physics(delta) -> void:

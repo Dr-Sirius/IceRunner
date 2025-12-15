@@ -1,149 +1,61 @@
-[gd_scene load_steps=10 format=3 uid="uid://c6ufmqtnbu5wx"]
+[gd_scene load_steps=8 format=3 uid="uid://c6ufmqtnbu5wx"]
 
+[ext_resource type="Material" uid="uid://dguhoh6oa2b8n" path="res://assets/Ice003_1K-JPG/Ice003_1K-JPG.tres" id="1_cwt80"]
 [ext_resource type="PackedScene" uid="uid://bv4wvc0fg51in" path="res://player.tscn" id="2_4g0oj"]
-[ext_resource type="Material" uid="uid://bfdp4gcysg86f" path="res://ice.tres" id="2_cwt80"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rh5xb"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_cwt80"]
-sky_material = SubResource("ProceduralSkyMaterial_rh5xb")
-
-[sub_resource type="Environment" id="Environment_4g0oj"]
-background_mode = 2
-sky = SubResource("Sky_cwt80")
-tonemap_mode = 2
-glow_enabled = true
+[ext_resource type="Script" uid="uid://bsfy1m5iuisrn" path="res://rings.gd" id="3_4g0oj"]
+[ext_resource type="PackedScene" uid="uid://bq67n376nrrfv" path="res://RaceRing.tscn" id="4_udkbk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rh5xb"]
 friction = 0.11
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_4g0oj"]
-size = Vector3(1, 1, 1.4450684)
-
 [sub_resource type="BoxMesh" id="BoxMesh_4g0oj"]
+material = ExtResource("1_cwt80")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_cwt80"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4g0oj"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_4g0oj")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.8660254, -0.29247886, 0.40553197, 0, 0.8110638, 0.58495766, -0.50000006, 0.50658816, -0.7024019, 0, 0, 0)
-shadow_enabled = true
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_rh5xb")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(14.698585, 0, 0, 0, 1, 0, 0, 0, 17.484327, 0, 0, 0)
-shape = SubResource("BoxShape3D_4g0oj")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(14.698585, 0, 0, 0, 1, 0, 0, 0, 24.904448, 0, 0, 0)
-material_override = ExtResource("2_cwt80")
-mesh = SubResource("BoxMesh_4g0oj")
-
-[node name="StaticBody3D7" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.878111, 19.634699)
-physics_material_override = SubResource("PhysicsMaterial_rh5xb")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D7"]
-transform = Transform3D(14.698585, 0, 0, 0, 0.81915206, 10.028599, 0, -0.57357645, 14.322323, 0, 0, 0)
-shape = SubResource("BoxShape3D_cwt80")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D7"]
-transform = Transform3D(14.698585, 0, 0, 0, 0.81915206, 10.028599, 0, -0.57357645, 14.322323, 0, 0, 0)
-material_override = ExtResource("2_cwt80")
-mesh = SubResource("BoxMesh_4g0oj")
-
 [node name="StaticBody3D8" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.099136, 34.84599)
+transform = Transform3D(25, 0, 0, 0, 1, 0, 0, 0, 25, 0, 10.099136, 34.84599)
 physics_material_override = SubResource("PhysicsMaterial_rh5xb")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D8"]
-transform = Transform3D(14.698585, 0, 0, 0, 1, 0, 0, 0, 17.484327, 0, 0, 0)
-shape = SubResource("BoxShape3D_cwt80")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D8"]
 transform = Transform3D(14.698585, 0, 0, 0, 1, 0, 0, 0, 17.484327, 0, 0, 0)
-material_override = ExtResource("2_cwt80")
 mesh = SubResource("BoxMesh_4g0oj")
 
-[node name="StaticBody3D3" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32.105267)
-physics_material_override = SubResource("PhysicsMaterial_rh5xb")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D8"]
 transform = Transform3D(14.698585, 0, 0, 0, 1, 0, 0, 0, 17.484327, 0, 0, 0)
-shape = SubResource("BoxShape3D_cwt80")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D3"]
-transform = Transform3D(14.698585, 0, 0, 0, 1, 0, 0, 0, 17.484327, 0, 0, 0)
-material_override = ExtResource("2_cwt80")
-mesh = SubResource("BoxMesh_4g0oj")
-
-[node name="StaticBody3D4" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -54.94619)
-physics_material_override = SubResource("PhysicsMaterial_rh5xb")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4"]
-transform = Transform3D(14.698585, 0, 0, 0, 1, 0, 0, 0, 17.484327, 0, 0, 0)
-shape = SubResource("BoxShape3D_cwt80")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D4"]
-transform = Transform3D(14.698585, 0, 0, 0, 1, 0, 0, 0, 17.484327, 0, 0, 0)
-material_override = ExtResource("2_cwt80")
-mesh = SubResource("BoxMesh_4g0oj")
-
-[node name="StaticBody3D5" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -78.54709)
-physics_material_override = SubResource("PhysicsMaterial_rh5xb")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5"]
-transform = Transform3D(14.698585, 0, 0, 0, 1, 0, 0, 0, 17.484327, 0, 0, 0)
-shape = SubResource("BoxShape3D_cwt80")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D5"]
-transform = Transform3D(14.698585, 0, 0, 0, 1, 0, 0, 0, 17.484327, 0, 0, 0)
-material_override = ExtResource("2_cwt80")
-mesh = SubResource("BoxMesh_4g0oj")
-
-[node name="StaticBody3D6" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -102.76929)
-physics_material_override = SubResource("PhysicsMaterial_rh5xb")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D6"]
-transform = Transform3D(14.698585, 0, 0, 0, 1, 0, 0, 0, 17.484327, 0, 0, 0)
-shape = SubResource("BoxShape3D_cwt80")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D6"]
-transform = Transform3D(14.698585, 0, 0, 0, 1, 0, 0, 0, 17.484327, 0, 0, 0)
-material_override = ExtResource("2_cwt80")
-mesh = SubResource("BoxMesh_4g0oj")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9094249, -0.41586813, 0, 0.41586813, 0.9094249, 0, 3.409874, -14.931571)
-physics_material_override = SubResource("PhysicsMaterial_rh5xb")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
-transform = Transform3D(7.0414906, 0, 0, 0, 0.28975096, 0, 0, 0, 8.78391, 0, -0.36898303, 3.1953373)
-shape = SubResource("BoxShape3D_cwt80")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
-transform = Transform3D(7.0414906, 0, 0, 0, 0.28975096, 0, 0, 0, 8.78391, 0, -0.5157931, 3.6648731)
-material_override = ExtResource("2_cwt80")
-mesh = SubResource("BoxMesh_4g0oj")
+shape = SubResource("ConvexPolygonShape3D_4g0oj")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_4g0oj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.52565384, 12.017612, 40.204792)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.52565384, 11.988848, 40.204792)
 floor_stop_on_slope = false
-floor_max_angle = 0.5235988
 speed = 10.0
-sprint_speed = 12.0
+sprint_speed = 15.0
 air_move_speed = 2.0
 air_accel = 10.0
+ground_friction = 1.0
 auto_behop = false
+
+[node name="Rings" type="Node3D" parent="." node_paths=PackedStringArray("rings")]
+script = ExtResource("3_4g0oj")
+rings = [NodePath("RaceRing"), NodePath("RaceRing2"), NodePath("RaceRing3"), NodePath("RaceRing4"), NodePath("RaceRing5"), NodePath("RaceRing6")]
+
+[node name="RaceRing" parent="Rings" instance=ExtResource("4_udkbk")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.7139378, 11.573921, 29.83092)
+
+[node name="RaceRing2" parent="Rings" instance=ExtResource("4_udkbk")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.7139378, 11.573921, 25.024729)
+
+[node name="RaceRing3" parent="Rings" instance=ExtResource("4_udkbk")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.7139378, 11.573921, 16.243828)
+
+[node name="RaceRing4" parent="Rings" instance=ExtResource("4_udkbk")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.7139378, 11.573921, 9.216715)
+
+[node name="RaceRing5" parent="Rings" instance=ExtResource("4_udkbk")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.7139378, 11.573921, 2.7158604)
+
+[node name="RaceRing6" parent="Rings" instance=ExtResource("4_udkbk")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.7139378, 11.573921, 2.7158604)

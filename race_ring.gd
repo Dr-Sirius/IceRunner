@@ -3,7 +3,7 @@ class_name RaceRing extends Node3D
 const CURRENT: Color = Color.AQUA
 const NORMAL: Color = Color.WHITE
 const NEXT: Color = Color(0.976, 0.692, 0.772, 1.0)
-const FINISH: Color = Color.SPRING_GREEN
+const FINISH: Color = Color.BLACK
 
 var ring: MeshInstance3D
 

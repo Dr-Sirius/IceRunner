@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6ufmqtnbu5wx"]
+[gd_scene load_steps=11 format=3 uid="uid://c6ufmqtnbu5wx"]
 
 [ext_resource type="Material" uid="uid://dguhoh6oa2b8n" path="res://assets/Ice003_1K-JPG/Ice003_1K-JPG.tres" id="1_cwt80"]
 [ext_resource type="PackedScene" uid="uid://bv4wvc0fg51in" path="res://player.tscn" id="2_4g0oj"]
 [ext_resource type="Script" uid="uid://bsfy1m5iuisrn" path="res://rings.gd" id="3_4g0oj"]
 [ext_resource type="PackedScene" uid="uid://bq67n376nrrfv" path="res://RaceRing.tscn" id="4_udkbk"]
+[ext_resource type="Script" uid="uid://dnei57f0b42tj" path="res://create_rings.gd" id="5_e0b67"]
+[ext_resource type="Script" uid="uid://d2xa2dxctif5j" path="res://race_ring.gd" id="6_m6eui"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rh5xb"]
 friction = 0.11
@@ -13,6 +15,13 @@ material = ExtResource("1_cwt80")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4g0oj"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="Curve3D" id="Curve3D_e0b67"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.62307215, 0, -12.564022, 0, 0, 0, 0, 0, 0, 3.1657043, 0, -19.262041, 0, 0, 0, 0, 0, 0, 21.094748, 0, -23.118477, 0, 0, 0, 0, 0, 0, 25.289465, 0, -18.450161, 0, 0, 0, 0, 0, 0, 28.536993, 0, -13.240589, 0, 0, 0, 0, 0, 0, 38.888477, 0, -17.367653, 0, 0, 0, 0, 0, 0, 36.317516, 0, -26.433659),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
 
 [node name="Node3D" type="Node3D"]
 
@@ -38,9 +47,8 @@ air_accel = 10.0
 ground_friction = 1.0
 auto_behop = false
 
-[node name="Rings" type="Node3D" parent="." node_paths=PackedStringArray("rings")]
+[node name="Rings" type="Node3D" parent="."]
 script = ExtResource("3_4g0oj")
-rings = [NodePath("RaceRing"), NodePath("RaceRing2"), NodePath("RaceRing3"), NodePath("RaceRing4"), NodePath("RaceRing5"), NodePath("RaceRing6")]
 
 [node name="RaceRing" parent="Rings" instance=ExtResource("4_udkbk")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.7139378, 11.573921, 29.83092)
@@ -59,3 +67,36 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.7139378, 11.573921, 2.7158
 
 [node name="RaceRing6" parent="Rings" instance=ExtResource("4_udkbk")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.7139378, 11.573921, 2.7158604)
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.878055, 0)
+curve = SubResource("Curve3D_e0b67")
+script = ExtResource("5_e0b67")
+
+[node name="RaceRing" type="Node3D" parent="Path3D" instance=ExtResource("4_udkbk")]
+transform = Transform3D(4.351996, 0, -2.4617336, 0, 5, 0, 2.4617336, 0, 4.351996, -0.62307215, 0, -12.564022)
+script = ExtResource("6_m6eui")
+
+[node name="@Node3D@47302" type="Node3D" parent="Path3D" instance=ExtResource("4_udkbk")]
+transform = Transform3D(1.0514244, 0, -4.8882008, 0, 5, 0, 4.8882008, 0, 1.0514244, 3.1657043, 0, -19.262041)
+script = ExtResource("6_m6eui")
+
+[node name="@Node3D@47303" type="Node3D" parent="Path3D" instance=ExtResource("4_udkbk")]
+transform = Transform3D(-3.7191505, 0, -3.3418438, 0, 5, 0, 3.3418438, 0, -3.7191505, 21.094748, 0, -23.118477)
+script = ExtResource("6_m6eui")
+
+[node name="@Node3D@47304" type="Node3D" parent="Path3D" instance=ExtResource("4_udkbk")]
+transform = Transform3D(-4.243083, 0, -2.645042, 0, 5, 0, 2.645042, 0, -4.243083, 25.289465, 0, -18.450161)
+script = ExtResource("6_m6eui")
+
+[node name="@Node3D@47305" type="Node3D" parent="Path3D" instance=ExtResource("4_udkbk")]
+transform = Transform3D(1.851719, 0, -4.644474, 0, 5, 0, 4.644474, 0, 1.851719, 28.536993, 0, -13.240589)
+script = ExtResource("6_m6eui")
+
+[node name="@Node3D@47306" type="Node3D" parent="Path3D" instance=ExtResource("4_udkbk")]
+transform = Transform3D(4.8103194, 0, 1.3641224, 0, 5, 0, -1.3641224, 0, 4.8103194, 38.888477, 0, -17.367653)
+script = ExtResource("6_m6eui")
+
+[node name="@Node3D@47307" type="Node3D" parent="Path3D" instance=ExtResource("4_udkbk")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 36.317516, 0, -26.433659)
+script = ExtResource("6_m6eui")

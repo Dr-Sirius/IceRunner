@@ -1,9 +1,11 @@
 class_name Rings extends Node3D
 
-@export var rings: Array[RaceRing]
+var rings: Array[RaceRing]
 
 func _ready() -> void:
-
+	
+	for c in get_children():
+		rings.append(c)
 	
 	rings[0].set_color.emit(RaceRing.CURRENT)
 	rings[1].set_color.emit( RaceRing.NEXT)

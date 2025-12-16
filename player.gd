@@ -43,6 +43,8 @@ var just_on_ground: bool = false
 var last_col: KinematicCollision3D
 var current_speed: float = base_speed
 
+var race_start: bool = false
+
 func _ready():
 	$vel.text = str(velocity)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -50,6 +52,11 @@ func _ready():
 	base_speed = speed
 	jump_velocity = jump_height
 	velocity.y = 0
+	
+	Global.race_start.connect(
+		func():
+			race_start = true
+	)
 	#camera.fov = Config.config_file.get_value("VideoSettings","Fov")
 	
 func _unhandled_input(event: InputEvent) -> void:
@@ -70,6 +77,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 	
 func _physics_process(delta: float) -> void:
+	
+	if !race_start:
+		return
+	
 	$vel.text = str(snappedf((abs(velocity.x) + abs(velocity.z))/2,0.01))
 
 	current_speed = base_speed

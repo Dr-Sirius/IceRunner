@@ -21,14 +21,14 @@ func ring_entered(col: RaceRing):
 		if len(rings) > 2 and rings[-1] != rings[2]:
 			rings[2].set_color.emit(RaceRing.NEXT)
 		
-		rings[0].queue_free()
+		rings[0].visible = false
 		rings.remove_at(0)
 	elif col.current_color == RaceRing.CURRENT and len(rings) == 2:
-		rings[0].queue_free()
+		rings[0].visible = false
 		rings.remove_at(0)
 	elif col.current_color == RaceRing.FINISH and len(rings) == 1:
 		Global.player_won.emit()
-		rings[0].queue_free()
+		rings[0].visible = false
 	else:
 		
 		Global.player_wrong_way.emit()

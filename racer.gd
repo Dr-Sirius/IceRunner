@@ -29,7 +29,9 @@ var current_speed: float = base_speed
 var current_point: int = 0
 
 func _ready():
-	base_speed = speed
+	base_speed = randf_range(1,speed*2)
+	#ground_accel = randf_range(ground_accel/2,ground_accel*2)
+	print(base_speed)
 	velocity.y = 0
 	passed_ring.connect(
 	func():
@@ -41,15 +43,15 @@ func _physics_process(delta: float) -> void:
 	var dir_to: Vector3
 	
 	if current_point == len(race_path):
-		print("reached")
+	
 		dir_to = Vector3.ZERO
 		ground_friction  = 0.01
 	else:
 		
 		dir_to = global_position.direction_to(race_path[current_point].global_position)
 	
-	
-	desire_dir = global_transform.basis * Vector3(dir_to.x,0,dir_to.z)
+	current_speed = base_speed
+	desire_dir = global_transform.basis * Vector3(randf_range(dir_to.x-0.3,dir_to.x+0.3),0,randf_range(dir_to.z-0.1,dir_to.z+0.1))
 	
 	if is_on_floor():
 		

@@ -29,3 +29,5 @@ func on_entered(area: Area3D):
 	if area.is_in_group("Player"):
 		
 		player_passed.emit(self)
+	if area.is_in_group("Racer"):
+		area.get_parent().passed_ring.emit()

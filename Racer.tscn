@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwos5cjp82ifw"]
+
+[ext_resource type="Script" uid="uid://c1gotyej583lc" path="res://racer.gd" id="1_4nvev"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4nvev"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qtoyv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4nvev"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_4nvev")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_4nvev")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_qtoyv")
+
+[node name="Area3D" type="Area3D" parent="." groups=["Racer"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_4nvev")

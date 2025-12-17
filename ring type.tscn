@@ -74,3 +74,35 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_fwf6g")
 theme_override_font_sizes/font_size = 100
 text = "You Won!"
+
+[node name="Lose" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.335
+anchor_top = 0.46
+anchor_right = 0.652
+anchor_bottom = 0.59800005
+offset_left = -467.92
+offset_top = -323.08002
+offset_right = 480.896
+offset_bottom = 309.49597
+grow_horizontal = 2
+color = Color(1, 0.14509805, 0.30588236, 1)
+
+[node name="Label" type="Label" parent="Lose"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.36100003
+anchor_top = 0.47100002
+anchor_right = 0.63900006
+anchor_bottom = 0.54
+offset_left = 162.64597
+offset_top = 9.437988
+offset_right = -162.64606
+offset_bottom = -17.380005
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_fwf6g")
+theme_override_font_sizes/font_size = 100
+text = "You Loss!"

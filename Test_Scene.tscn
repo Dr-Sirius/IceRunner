@@ -61,7 +61,7 @@ mesh = SubResource("BoxMesh_4g0oj")
 transform = Transform3D(14.698585, 0, 0, 0, 1, 0, 0, 0, 17.484327, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_4g0oj")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("2_4g0oj")]
+[node name="Player" parent="." instance=ExtResource("2_4g0oj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.093438, 11.988848, -0.32288742)
 floor_stop_on_slope = false
 speed = 10.0

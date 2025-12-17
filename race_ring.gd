@@ -11,6 +11,7 @@ var current_color: Color
 var shader: ShaderMaterial
 signal player_passed(current_ring:RaceRing)
 signal set_color(col:Color)
+signal racer_passed(racer:Racer)
 
 
 func _ready() -> void:
@@ -29,5 +30,7 @@ func on_entered(area: Area3D):
 	if area.is_in_group("Player"):
 		
 		player_passed.emit(self)
+		
 	if area.is_in_group("Racer"):
 		area.get_parent().passed_ring.emit()
+		racer_passed.emit(area.get_parent().name)

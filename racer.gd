@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Racer extends CharacterBody3D
 
 signal passed_ring
 
@@ -27,6 +27,8 @@ var desire_dir: Vector3 = Vector3.ZERO
 var base_speed: float = 7
 var current_speed: float = base_speed
 var current_point: int = 0
+var race_start: bool = false
+
 
 func _ready():
 	base_speed = randf_range(1,speed*2)
@@ -37,9 +39,18 @@ func _ready():
 	func():
 		current_point+=1
 		)
+		
+	Global.race_start.connect(
+		func():
+			race_start = true
+	)
 	#camera.fov = Config.config_file.get_value("VideoSettings","Fov")
 
 func _physics_process(delta: float) -> void:
+	
+	if !race_start:
+		return
+	
 	var dir_to: Vector3
 	
 	if current_point == len(race_path):

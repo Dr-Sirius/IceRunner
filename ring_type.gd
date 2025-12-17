@@ -10,8 +10,18 @@ func _ready() -> void:
 			$Wrong.visible = false
 	)
 	
-	Global.player_won.connect(
+	Global.player_finished.connect(
 		func():
-			$Win.visible = true
+			if Global.race_results[0] == "Player":
+				$Win.visible = true
+				await get_tree().create_timer(1).timeout
+				var tween = get_tree().create_tween()
+				tween.tween_property($Win,"modulate",Color(1.0, 1.0, 1.0, 0.0),0.5)
+			else:
+				$Lose.visible = true
+				await get_tree().create_timer(0.8).timeout
+				var tween = get_tree().create_tween()
+				tween.tween_property($Lose,"modulate",Color(1.0, 1.0, 1.0, 0.0),0.5)
+				
 			
 	)

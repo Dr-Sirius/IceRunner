@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://c6ufmqtnbu5wx"]
 
 [ext_resource type="Material" uid="uid://dguhoh6oa2b8n" path="res://assets/Ice003_1K-JPG/Ice003_1K-JPG.tres" id="1_cwt80"]
-[ext_resource type="PackedScene" uid="uid://bv4wvc0fg51in" path="res://player.tscn" id="2_4g0oj"]
-[ext_resource type="Script" uid="uid://bsfy1m5iuisrn" path="res://rings.gd" id="3_4g0oj"]
-[ext_resource type="PackedScene" uid="uid://bq67n376nrrfv" path="res://RaceRing.tscn" id="4_udkbk"]
-[ext_resource type="Script" uid="uid://dnei57f0b42tj" path="res://create_rings.gd" id="5_e0b67"]
-[ext_resource type="PackedScene" uid="uid://bwos5cjp82ifw" path="res://Racer.tscn" id="6_m6eui"]
+[ext_resource type="PackedScene" uid="uid://bv4wvc0fg51in" path="res://Racers/player.tscn" id="2_4g0oj"]
+[ext_resource type="Script" uid="uid://bsfy1m5iuisrn" path="res://scripts/rings.gd" id="3_4g0oj"]
+[ext_resource type="PackedScene" uid="uid://bq67n376nrrfv" path="res://Racers/RaceRing.tscn" id="4_udkbk"]
+[ext_resource type="Script" uid="uid://dnei57f0b42tj" path="res://scripts/create_rings.gd" id="5_e0b67"]
+[ext_resource type="PackedScene" uid="uid://bwos5cjp82ifw" path="res://Racers/Racer.tscn" id="6_m6eui"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_udkbk"]
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

@@ -88,7 +88,7 @@ offset_top = -323.08002
 offset_right = 480.896
 offset_bottom = 309.49597
 grow_horizontal = 2
-color = Color(1, 0.14509805, 0.30588236, 1)
+color = Color(1, 0.14509805, 0.30588236, 0.3647059)
 
 [node name="Label" type="Label" parent="Lose"]
 layout_mode = 1

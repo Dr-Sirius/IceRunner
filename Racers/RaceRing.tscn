@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://bq67n376nrrfv"]
 
-[ext_resource type="Script" uid="uid://d2xa2dxctif5j" path="res://race_ring.gd" id="1_k4v4w"]
+[ext_resource type="Script" uid="uid://d2xa2dxctif5j" path="res://scripts/race_ring.gd" id="1_k4v4w"]
 
 [sub_resource type="Shader" id="Shader_k4v4w"]
 code = "shader_type spatial;

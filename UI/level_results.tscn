@@ -1,0 +1,120 @@
+[gd_scene load_steps=2 format=3 uid="uid://bysbak8wjcc05"]
+
+[ext_resource type="Theme" uid="uid://cbfe0cuudh8il" path="res://UI/main.tres" id="1_fnq66"]
+
+[node name="Level Results" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.35465357, 0.732422, 0.81612426, 0.25882354)
+
+[node name="race_results_list" type="ItemList" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8125
+anchor_top = 0.3117284
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Race Results" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8155
+anchor_top = 0.2191358
+anchor_right = 0.9930556
+anchor_bottom = 0.35928395
+offset_left = 0.5439453
+offset_bottom = 0.18399811
+grow_horizontal = 0
+theme = ExtResource("1_fnq66")
+text = "Race Results"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Your Time" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.63143754
+anchor_top = 0.22659881
+anchor_right = 0.79243755
+anchor_bottom = 0.35559875
+offset_left = -0.41601563
+offset_top = 0.16397095
+offset_right = 0.11193848
+offset_bottom = 0.07199097
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_fnq66")
+text = "Your Time"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Time" type="Label" parent="Background/Your Time"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.14481723
+anchor_top = 0.77800006
+anchor_right = 0.8275591
+anchor_bottom = 1.7247305
+offset_left = 0.06399536
+offset_top = 0.036994934
+offset_right = 0.0739975
+offset_bottom = -0.01499939
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Try Again" type="Button" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.050347224
+anchor_top = 0.2191358
+anchor_right = 0.3159722
+anchor_bottom = 0.32098764
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_fnq66")
+text = "Try Again!"
+metadata/_edit_use_anchors_ = true
+
+[node name="Continue" type="Button" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.050347224
+anchor_top = 0.3595679
+anchor_right = 0.3159722
+anchor_bottom = 0.46141976
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_fnq66")
+text = "Continue"
+metadata/_edit_use_anchors_ = true
+
+[node name="Main Menu" type="Button" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.050347224
+anchor_top = 0.49382716
+anchor_right = 0.3159722
+anchor_bottom = 0.595679
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_fnq66")
+text = "Main Menu"
+metadata/_edit_use_anchors_ = true

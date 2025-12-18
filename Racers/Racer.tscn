@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bwos5cjp82ifw"]
 
-[ext_resource type="Script" uid="uid://c1gotyej583lc" path="res://racer.gd" id="1_4nvev"]
+[ext_resource type="Script" uid="uid://c1gotyej583lc" path="res://scripts/racer.gd" id="1_4nvev"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4nvev"]
 

@@ -4,6 +4,9 @@ extends Control
 @onready var race_results: ItemList = %race_results_list
 @onready var results_proc: Label = $"Background/Results Proc"
 
+@onready var try_again: Button = $"Background/Try Again"
+@onready var continue_btn: Button = $Background/Continue
+@onready var main_menu: Button = $"Background/Main Menu"
 
 func _ready() -> void:
 	
@@ -27,3 +30,8 @@ func _ready() -> void:
 			print("Work")
 			results_proc.visible = false
 	)
+	
+	
+	try_again.pressed.connect(LevelLoader.restart_level.emit)
+	continue_btn.pressed.connect(LevelLoader.next_level.emit)
+	main_menu.pressed.connect(LevelLoader.main_menu.emit)

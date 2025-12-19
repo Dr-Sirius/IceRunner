@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://c6ufmqtnbu5wx"]
+[gd_scene load_steps=15 format=3 uid="uid://c6ufmqtnbu5wx"]
 
 [ext_resource type="Material" uid="uid://dguhoh6oa2b8n" path="res://assets/Ice003_1K-JPG/Ice003_1K-JPG.tres" id="1_r7pmk"]
 [ext_resource type="PackedScene" uid="uid://bv4wvc0fg51in" path="res://Racers/player.tscn" id="2_5b86a"]
 [ext_resource type="Script" uid="uid://bsfy1m5iuisrn" path="res://scripts/rings.gd" id="3_6halt"]
 [ext_resource type="PackedScene" uid="uid://bq67n376nrrfv" path="res://Racers/RaceRing.tscn" id="4_wqqf8"]
 [ext_resource type="Script" uid="uid://dnei57f0b42tj" path="res://scripts/create_rings.gd" id="5_3m3o3"]
+[ext_resource type="Script" uid="uid://d2xa2dxctif5j" path="res://scripts/race_ring.gd" id="6_5b86a"]
 [ext_resource type="PackedScene" uid="uid://bwos5cjp82ifw" path="res://Racers/Racer.tscn" id="6_d23i5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_udkbk"]
@@ -31,12 +32,12 @@ material = ExtResource("1_r7pmk")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4g0oj"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
-[sub_resource type="Curve3D" id="Curve3D_e0b67"]
+[sub_resource type="Curve3D" id="Curve3D_ppl5s"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.62307215, 0, -12.564022, 0, 0, 0, 0, 0, 0, 3.1657043, 0, -19.262041, 0, 0, 0, 0, 0, 0, 21.094748, 0, -23.118477, 0, 0, 0, 0, 0, 0, 25.289465, 0, -18.450161, 0, 0, 0, 0, 0, 0, 28.536993, 0, -13.240589, 0, 0, 0, 0, 0, 0, 38.888477, 0, -17.367653, 0, 0, 0, 0, 0, 0, 36.317516, 0, -26.433659),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 7.771366, -2.861023e-06, -5.6366997, 0, 0, 0, 0, 0, 0, 22.110863, 2.0252619, -4.2553716, 0, 0, 0, 0, 0, 0, 32.043266, 3.9667482, -4.4527044, 0, 0, 0, 0, 0, 0, 44.540997, 3.6571627, -3.9922616, 0, 0, 0, 0, 0, 0, 61.182713, 1.6129427, -4.3869267, 0, 0, 0, 0, 0, 0, 78.6858, -2.861023e-06, -4.6841793),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
-point_count = 7
+point_count = 6
 
 [node name="Node3D" type="Node3D"]
 
@@ -63,6 +64,7 @@ shape = SubResource("ConvexPolygonShape3D_4g0oj")
 
 [node name="Player" parent="." instance=ExtResource("2_5b86a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.093438, 11.988848, -0.32288742)
+visible = false
 floor_stop_on_slope = false
 speed = 10.0
 sprint_speed = 15.0
@@ -74,54 +76,78 @@ auto_behop = false
 [node name="Rings" type="Node3D" parent="."]
 script = ExtResource("3_6halt")
 
-[node name="RaceRing" parent="Rings" instance=ExtResource("4_wqqf8")]
-transform = Transform3D(4.351996, 0, -2.4617336, 0, 5, 0, 2.4617336, 0, 4.351996, -0.62307215, 11.878055, -12.564022)
+[node name="RaceRing" type="Node3D" parent="Rings" instance=ExtResource("4_wqqf8")]
+transform = Transform3D(-0.47943217, -0.69287765, -4.9284954, 0, 4.9513097, -0.69608504, 4.976961, -0.06674511, -0.4747634, 7.771366, 11.878052, -5.6366997)
+script = ExtResource("6_5b86a")
 
-[node name="@Node3D@24242" parent="Rings" instance=ExtResource("4_wqqf8")]
-transform = Transform3D(1.0514244, 0, -4.8882008, 0, 5, 0, 4.8882008, 0, 1.0514244, 3.1657043, 11.878055, -19.262041)
+[node name="@Node3D@29930" type="Node3D" parent="Rings" instance=ExtResource("4_wqqf8")]
+transform = Transform3D(0.09931843, -0.95882535, -4.906199, 0, 4.9071674, -0.95901453, 4.9990134, 0.019049563, 0.097474426, 22.110863, 13.9033165, -4.2553716)
+script = ExtResource("6_5b86a")
 
-[node name="@Node3D@24243" parent="Rings" instance=ExtResource("4_wqqf8")]
-transform = Transform3D(-2.0258446, 0, -4.5712094, 0, 5, 0, 4.5712094, 0, -2.0258446, 14.87259, 11.878055, -23.917458)
+[node name="@Node3D@29931" type="Node3D" parent="Rings" instance=ExtResource("4_wqqf8")]
+transform = Transform3D(-0.1840857, 0.123650946, -4.9950795, 0, 4.998469, 0.12373484, 4.99661, 0.004555563, -0.18402933, 32.043266, 15.844803, -4.4527044)
+script = ExtResource("6_5b86a")
 
-[node name="@Node3D@24244" parent="Rings" instance=ExtResource("4_wqqf8")]
-transform = Transform3D(-4.243083, 0, -2.645042, 0, 5, 0, 2.645042, 0, -4.243083, 25.289465, 11.878055, -18.450161)
+[node name="@Node3D@29932" type="Node3D" parent="Rings" instance=ExtResource("4_wqqf8")]
+transform = Transform3D(0.118543506, 0.6092634, -4.9613247, 0, 4.96272, 0.6094348, 4.9985943, -0.014448906, 0.11765964, 44.540997, 15.535217, -3.9922616)
+script = ExtResource("6_5b86a")
 
-[node name="@Node3D@24245" parent="Rings" instance=ExtResource("4_wqqf8")]
-transform = Transform3D(-1.5689832, 0, -4.7474513, 0, 5, 0, 4.7474513, 0, -1.5689832, 31.219587, 11.878055, -14.310121)
+[node name="@Node3D@29933" type="Node3D" parent="Rings" instance=ExtResource("4_wqqf8")]
+transform = Transform3D(0.084901914, 0.45868456, -4.9781923, 0, 4.9789104, 0.45875072, 4.999279, -0.007789763, 0.08454381, 61.182713, 13.490997, -4.3869267)
+script = ExtResource("6_5b86a")
 
-[node name="@Node3D@24246" parent="Rings" instance=ExtResource("4_wqqf8")]
-transform = Transform3D(3.126037, 0, -3.9022937, 0, 5, 0, 3.9022937, 0, 3.126037, 38.888477, 11.878055, -17.367653)
-
-[node name="@Node3D@24247" parent="Rings" instance=ExtResource("4_wqqf8")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 47.042362, 11.878055, -26.433659)
+[node name="@Node3D@29934" type="Node3D" parent="Rings" instance=ExtResource("4_wqqf8")]
+transform = Transform3D(-0.5530085, 0, -4.969324, 0, 5, 0, 4.969324, 0, -0.5530085, 78.6858, 11.878052, -4.6841793)
+script = ExtResource("6_5b86a")
 
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.878055, 0)
-curve = SubResource("Curve3D_e0b67")
+curve = SubResource("Curve3D_ppl5s")
 script = ExtResource("5_3m3o3")
 
-[node name="CharacterBody3D2" parent="." node_paths=PackedStringArray("race_path") instance=ExtResource("6_d23i5")]
+[node name="CharacterBody3D2" parent="." node_paths=PackedStringArray("race_path_node") instance=ExtResource("6_d23i5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4521194, 11.599136, -5.2623315)
-race_path = [NodePath("../Rings/RaceRing"), NodePath("../Rings/@Node3D@24242"), NodePath("../Rings/@Node3D@24243"), NodePath("../Rings/@Node3D@24244"), NodePath("../Rings/@Node3D@24245"), NodePath("../Rings/@Node3D@24246"), NodePath("../Rings/@Node3D@24247")]
+race_path_node = NodePath("../Rings")
 ground_friction = 1.0
 
-[node name="CharacterBody3D3" parent="." node_paths=PackedStringArray("race_path") instance=ExtResource("6_d23i5")]
+[node name="CharacterBody3D3" parent="." node_paths=PackedStringArray("race_path_node") instance=ExtResource("6_d23i5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10148406, 11.599136, -1.9293604)
 collision_layer = 2
 collision_mask = 2
-race_path = [NodePath("../Rings/RaceRing"), NodePath("../Rings/@Node3D@24242"), NodePath("../Rings/@Node3D@24243"), NodePath("../Rings/@Node3D@24244"), NodePath("../Rings/@Node3D@24245"), NodePath("../Rings/@Node3D@24246"), NodePath("../Rings/@Node3D@24247")]
+race_path_node = NodePath("../Rings")
 ground_friction = 1.0
 
-[node name="CharacterBody3D4" parent="." node_paths=PackedStringArray("race_path") instance=ExtResource("6_d23i5")]
+[node name="CharacterBody3D4" parent="." node_paths=PackedStringArray("race_path_node") instance=ExtResource("6_d23i5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9636097, 11.599136, -1.9293604)
 collision_layer = 4
 collision_mask = 4
-race_path = [NodePath("../Rings/RaceRing"), NodePath("../Rings/@Node3D@24242"), NodePath("../Rings/@Node3D@24243"), NodePath("../Rings/@Node3D@24244"), NodePath("../Rings/@Node3D@24245"), NodePath("../Rings/@Node3D@24246"), NodePath("../Rings/@Node3D@24247")]
+race_path_node = NodePath("../Rings")
 ground_friction = 1.0
 
-[node name="CharacterBody3D5" parent="." node_paths=PackedStringArray("race_path") instance=ExtResource("6_d23i5")]
+[node name="CharacterBody3D5" parent="." node_paths=PackedStringArray("race_path_node") instance=ExtResource("6_d23i5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3854623, 11.599136, -0.91640186)
 collision_layer = 256
 collision_mask = 256
-race_path = [NodePath("../Rings/RaceRing"), NodePath("../Rings/@Node3D@24242"), NodePath("../Rings/@Node3D@24243"), NodePath("../Rings/@Node3D@24244"), NodePath("../Rings/@Node3D@24245"), NodePath("../Rings/@Node3D@24246"), NodePath("../Rings/@Node3D@24247")]
+race_path_node = NodePath("../Rings")
 ground_friction = 1.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(0.5800349, 0.8145916, 0, -0.8145916, 0.5800349, 0, 0, 0, 1, 22.848715, 11.923392, -4.4383144)
+use_collision = true
+collision_layer = 986895
+collision_mask = 986895
+size = Vector3(2.3253174, 9.457275, 5.7216797)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.47219694, -0.8814931, 0, 0.8814931, 0.47219694, 0, 0, 0, 1, 60.592323, 11.513709, -4.4383144)
+use_collision = true
+collision_layer = 986895
+collision_mask = 986895
+size = Vector3(2.527832, 9.457275, 5.7216797)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.022163868, 0.9997544, 0, -0.9997544, -0.022163868, 0, 0, 0, 1, 41.48337, 13.553869, -4.4383144)
+use_collision = true
+collision_layer = 986895
+collision_mask = 986895
+size = Vector3(3.40625, 31.033447, 5.7216797)

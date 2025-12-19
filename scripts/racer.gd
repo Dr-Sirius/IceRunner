@@ -5,7 +5,7 @@ signal passed_ring
 # PreLoad
 @onready var gravity: float =  ProjectSettings.get_setting("physics/3d/default_gravity")
 
-@export var race_path: Array[RaceRing]
+@export var race_path_node: Rings
 
 @export var speed: float = 5
 @export var sprint_speed: float = 5
@@ -28,9 +28,13 @@ var base_speed: float = 7
 var current_speed: float = base_speed
 var current_point: int = 0
 var race_start: bool = false
-
+var race_path: Array[RaceRing] = []
 
 func _ready():
+	
+	for i in race_path_node.get_children():
+		race_path.append(i)
+	
 	base_speed = randf_range(1,speed*2)
 	Global.race_start.connect(
 		func(value: float):

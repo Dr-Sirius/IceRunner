@@ -4,7 +4,7 @@ extends Path3D
 @export_tool_button("Gen Rings") var gen_rings_action: Callable = gen_rings
 
 func gen_rings():
-	var rings = load("res://RaceRing.tscn")
+	var rings = load("res://Racers/RaceRing.tscn")
 	for i in curve.point_count:
 		var ring:RaceRing = rings.instantiate()
 		ring.position = curve.get_point_position(i)

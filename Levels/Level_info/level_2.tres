@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="LevelInfo" load_steps=4 format=3 uid="uid://cc7jny3ta2oji"]
+
+[ext_resource type="PackedScene" uid="uid://d3jg8yws8du30" path="res://Levels/Level_scenes/level_2.tscn" id="1_1ewcc"]
+[ext_resource type="Script" uid="uid://b330lxa7fldqs" path="res://level_info.gd" id="1_srphy"]
+
+[sub_resource type="Resource" id="Resource_1ewcc"]
+script = ExtResource("1_srphy")
+metadata/_custom_type_script = "uid://b330lxa7fldqs"
+
+[resource]
+script = ExtResource("1_srphy")
+name = "Level 2"
+current_level = ExtResource("1_1ewcc")
+next_level = SubResource("Resource_1ewcc")
+metadata/_custom_type_script = "uid://b330lxa7fldqs"

@@ -54,7 +54,7 @@ func _ready():
 	velocity.y = 0
 	
 	Global.race_start.connect(
-		func():
+		func(_val:float):
 			race_start = true
 	)
 	#camera.fov = Config.config_file.get_value("VideoSettings","Fov")

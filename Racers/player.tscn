@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bv4wvc0fg51in"]
+[gd_scene load_steps=11 format=3 uid="uid://bv4wvc0fg51in"]
 
 [ext_resource type="Script" uid="uid://5a5p01lio7r" path="res://scripts/player.gd" id="1_4flbx"]
 [ext_resource type="Shader" uid="uid://yskg3xucdrgy" path="res://addons/psx_camera/psx_camera_shader.gdshader" id="2_onrkg"]
 [ext_resource type="PackedScene" uid="uid://ktkbjsv7fogj" path="res://UI/ring type.tscn" id="3_i3pqv"]
 [ext_resource type="Script" uid="uid://cb5bi2my806xy" path="res://scripts/ring_type.gd" id="4_hqtel"]
+[ext_resource type="PackedScene" uid="uid://bysbak8wjcc05" path="res://UI/level_results.tscn" id="5_wv6l8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
@@ -64,5 +65,8 @@ offset_bottom = 23.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_onrkg")
 
-[node name="Ring Type" parent="." instance=ExtResource("3_i3pqv")]
+[node name="Ring Type" parent="." node_paths=PackedStringArray("LevelResults") instance=ExtResource("3_i3pqv")]
 script = ExtResource("4_hqtel")
+LevelResults = NodePath("../Level Results")
+
+[node name="Level Results" parent="." instance=ExtResource("5_wv6l8")]

@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://c6ufmqtnbu5wx"]
 
-[ext_resource type="Material" uid="uid://dguhoh6oa2b8n" path="res://assets/Ice003_1K-JPG/Ice003_1K-JPG.tres" id="1_cwt80"]
-[ext_resource type="PackedScene" uid="uid://bv4wvc0fg51in" path="res://Racers/player.tscn" id="2_4g0oj"]
-[ext_resource type="Script" uid="uid://bsfy1m5iuisrn" path="res://scripts/rings.gd" id="3_4g0oj"]
-[ext_resource type="PackedScene" uid="uid://bq67n376nrrfv" path="res://Racers/RaceRing.tscn" id="4_udkbk"]
-[ext_resource type="Script" uid="uid://dnei57f0b42tj" path="res://scripts/create_rings.gd" id="5_e0b67"]
-[ext_resource type="PackedScene" uid="uid://bwos5cjp82ifw" path="res://Racers/Racer.tscn" id="6_m6eui"]
+[ext_resource type="Material" uid="uid://dguhoh6oa2b8n" path="res://assets/Ice003_1K-JPG/Ice003_1K-JPG.tres" id="1_r7pmk"]
+[ext_resource type="PackedScene" uid="uid://bv4wvc0fg51in" path="res://Racers/player.tscn" id="2_5b86a"]
+[ext_resource type="Script" uid="uid://bsfy1m5iuisrn" path="res://scripts/rings.gd" id="3_6halt"]
+[ext_resource type="PackedScene" uid="uid://bq67n376nrrfv" path="res://Racers/RaceRing.tscn" id="4_wqqf8"]
+[ext_resource type="Script" uid="uid://dnei57f0b42tj" path="res://scripts/create_rings.gd" id="5_3m3o3"]
+[ext_resource type="PackedScene" uid="uid://bwos5cjp82ifw" path="res://Racers/Racer.tscn" id="6_d23i5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_udkbk"]
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -26,7 +26,7 @@ glow_blend_mode = 0
 friction = 0.11
 
 [sub_resource type="BoxMesh" id="BoxMesh_4g0oj"]
-material = ExtResource("1_cwt80")
+material = ExtResource("1_r7pmk")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4g0oj"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
@@ -61,7 +61,7 @@ mesh = SubResource("BoxMesh_4g0oj")
 transform = Transform3D(14.698585, 0, 0, 0, 1, 0, 0, 0, 17.484327, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_4g0oj")
 
-[node name="Player" parent="." instance=ExtResource("2_4g0oj")]
+[node name="Player" parent="." instance=ExtResource("2_5b86a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.093438, 11.988848, -0.32288742)
 floor_stop_on_slope = false
 speed = 10.0
@@ -72,54 +72,54 @@ ground_friction = 1.0
 auto_behop = false
 
 [node name="Rings" type="Node3D" parent="."]
-script = ExtResource("3_4g0oj")
+script = ExtResource("3_6halt")
 
-[node name="RaceRing" parent="Rings" instance=ExtResource("4_udkbk")]
+[node name="RaceRing" parent="Rings" instance=ExtResource("4_wqqf8")]
 transform = Transform3D(4.351996, 0, -2.4617336, 0, 5, 0, 2.4617336, 0, 4.351996, -0.62307215, 11.878055, -12.564022)
 
-[node name="@Node3D@24242" parent="Rings" instance=ExtResource("4_udkbk")]
+[node name="@Node3D@24242" parent="Rings" instance=ExtResource("4_wqqf8")]
 transform = Transform3D(1.0514244, 0, -4.8882008, 0, 5, 0, 4.8882008, 0, 1.0514244, 3.1657043, 11.878055, -19.262041)
 
-[node name="@Node3D@24243" parent="Rings" instance=ExtResource("4_udkbk")]
+[node name="@Node3D@24243" parent="Rings" instance=ExtResource("4_wqqf8")]
 transform = Transform3D(-2.0258446, 0, -4.5712094, 0, 5, 0, 4.5712094, 0, -2.0258446, 14.87259, 11.878055, -23.917458)
 
-[node name="@Node3D@24244" parent="Rings" instance=ExtResource("4_udkbk")]
+[node name="@Node3D@24244" parent="Rings" instance=ExtResource("4_wqqf8")]
 transform = Transform3D(-4.243083, 0, -2.645042, 0, 5, 0, 2.645042, 0, -4.243083, 25.289465, 11.878055, -18.450161)
 
-[node name="@Node3D@24245" parent="Rings" instance=ExtResource("4_udkbk")]
+[node name="@Node3D@24245" parent="Rings" instance=ExtResource("4_wqqf8")]
 transform = Transform3D(-1.5689832, 0, -4.7474513, 0, 5, 0, 4.7474513, 0, -1.5689832, 31.219587, 11.878055, -14.310121)
 
-[node name="@Node3D@24246" parent="Rings" instance=ExtResource("4_udkbk")]
+[node name="@Node3D@24246" parent="Rings" instance=ExtResource("4_wqqf8")]
 transform = Transform3D(3.126037, 0, -3.9022937, 0, 5, 0, 3.9022937, 0, 3.126037, 38.888477, 11.878055, -17.367653)
 
-[node name="@Node3D@24247" parent="Rings" instance=ExtResource("4_udkbk")]
+[node name="@Node3D@24247" parent="Rings" instance=ExtResource("4_wqqf8")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 47.042362, 11.878055, -26.433659)
 
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.878055, 0)
 curve = SubResource("Curve3D_e0b67")
-script = ExtResource("5_e0b67")
+script = ExtResource("5_3m3o3")
 
-[node name="CharacterBody3D2" parent="." node_paths=PackedStringArray("race_path") instance=ExtResource("6_m6eui")]
+[node name="CharacterBody3D2" parent="." node_paths=PackedStringArray("race_path") instance=ExtResource("6_d23i5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4521194, 11.599136, -5.2623315)
 race_path = [NodePath("../Rings/RaceRing"), NodePath("../Rings/@Node3D@24242"), NodePath("../Rings/@Node3D@24243"), NodePath("../Rings/@Node3D@24244"), NodePath("../Rings/@Node3D@24245"), NodePath("../Rings/@Node3D@24246"), NodePath("../Rings/@Node3D@24247")]
 ground_friction = 1.0
 
-[node name="CharacterBody3D3" parent="." node_paths=PackedStringArray("race_path") instance=ExtResource("6_m6eui")]
+[node name="CharacterBody3D3" parent="." node_paths=PackedStringArray("race_path") instance=ExtResource("6_d23i5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10148406, 11.599136, -1.9293604)
 collision_layer = 2
 collision_mask = 2
 race_path = [NodePath("../Rings/RaceRing"), NodePath("../Rings/@Node3D@24242"), NodePath("../Rings/@Node3D@24243"), NodePath("../Rings/@Node3D@24244"), NodePath("../Rings/@Node3D@24245"), NodePath("../Rings/@Node3D@24246"), NodePath("../Rings/@Node3D@24247")]
 ground_friction = 1.0
 
-[node name="CharacterBody3D4" parent="." node_paths=PackedStringArray("race_path") instance=ExtResource("6_m6eui")]
+[node name="CharacterBody3D4" parent="." node_paths=PackedStringArray("race_path") instance=ExtResource("6_d23i5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9636097, 11.599136, -1.9293604)
 collision_layer = 4
 collision_mask = 4
 race_path = [NodePath("../Rings/RaceRing"), NodePath("../Rings/@Node3D@24242"), NodePath("../Rings/@Node3D@24243"), NodePath("../Rings/@Node3D@24244"), NodePath("../Rings/@Node3D@24245"), NodePath("../Rings/@Node3D@24246"), NodePath("../Rings/@Node3D@24247")]
 ground_friction = 1.0
 
-[node name="CharacterBody3D5" parent="." node_paths=PackedStringArray("race_path") instance=ExtResource("6_m6eui")]
+[node name="CharacterBody3D5" parent="." node_paths=PackedStringArray("race_path") instance=ExtResource("6_d23i5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3854623, 11.599136, -0.91640186)
 collision_layer = 256
 collision_mask = 256

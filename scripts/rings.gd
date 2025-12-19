@@ -37,8 +37,9 @@ func ring_entered(col: RaceRing):
 		rings[0].visible = false
 		rings.remove_at(0)
 	elif col.current_color == RaceRing.FINISH and len(rings) == 1:
-		Global.player_finished.emit()
+		
 		Global.race_results.append("Player")
+		Global.player_finished.emit()
 		rings[0].visible = false
 		Global.rings_passed += 1
 	else:

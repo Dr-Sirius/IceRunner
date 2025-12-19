@@ -32,6 +32,15 @@ var race_start: bool = false
 
 func _ready():
 	base_speed = randf_range(1,speed*2)
+	Global.race_start.connect(
+		func(value: float):
+			race_start = true
+			if value >= speed*2:
+				speed = value + 2
+			base_speed = randf_range(value,speed*2)
+			print(base_speed)
+	)
+	
 	#ground_accel = randf_range(ground_accel/2,ground_accel*2)
 	print(base_speed)
 	velocity.y = 0
@@ -40,12 +49,10 @@ func _ready():
 		current_point+=1
 		)
 		
-	Global.race_start.connect(
-		func():
-			race_start = true
-	)
+	
 	#camera.fov = Config.config_file.get_value("VideoSettings","Fov")
-
+	
+	
 func _physics_process(delta: float) -> void:
 	
 	if !race_start:
@@ -53,12 +60,12 @@ func _physics_process(delta: float) -> void:
 	
 	var dir_to: Vector3
 	
-	if current_point == len(race_path):
+	if current_point >= len(race_path):
 	
 		dir_to = Vector3.ZERO
 		ground_friction  = 0.01
 	else:
-		
+	
 		dir_to = global_position.direction_to(race_path[current_point].global_position)
 	
 	current_speed = base_speed

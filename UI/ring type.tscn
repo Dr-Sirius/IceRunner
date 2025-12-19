@@ -56,7 +56,7 @@ offset_top = -323.08002
 offset_right = 480.896
 offset_bottom = 309.49597
 grow_horizontal = 2
-color = Color(0.16539398, 0.92973787, 0.57044196, 1)
+color = Color(0.16470589, 0.92941177, 0.5686275, 0.49411765)
 
 [node name="Label" type="Label" parent="Win"]
 layout_mode = 1
@@ -105,4 +105,4 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_fwf6g")
 theme_override_font_sizes/font_size = 100
-text = "You Loss!"
+text = "You Lose!"

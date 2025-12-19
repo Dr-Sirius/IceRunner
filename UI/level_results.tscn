@@ -1,14 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bysbak8wjcc05"]
+[gd_scene load_steps=3 format=3 uid="uid://bysbak8wjcc05"]
 
+[ext_resource type="Script" uid="uid://dwuv2ee11yqib" path="res://scripts/level_results.gd" id="1_8hbl7"]
 [ext_resource type="Theme" uid="uid://cbfe0cuudh8il" path="res://UI/main.tres" id="1_fnq66"]
 
 [node name="Level Results" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8hbl7")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -17,9 +20,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.35465357, 0.732422, 0.81612426, 0.25882354)
+color = Color(0.3529412, 0.73333335, 0.8156863, 0.5529412)
 
 [node name="race_results_list" type="ItemList" parent="Background"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.8125
@@ -66,6 +70,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Time" type="Label" parent="Background/Your Time"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.14481723
@@ -117,4 +122,22 @@ offset_right = 8.0
 offset_bottom = 8.0
 theme = ExtResource("1_fnq66")
 text = "Main Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="Results Proc" type="Label" parent="Background"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.70522225
+anchor_top = 0.15098153
+anchor_right = 0.9189097
+anchor_bottom = 0.19161111
+offset_left = -0.41601563
+offset_top = 0.16397095
+offset_right = 0.4159546
+offset_bottom = -0.16400146
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_fnq66")
+text = "Results Stil Processing!"
 metadata/_edit_use_anchors_ = true

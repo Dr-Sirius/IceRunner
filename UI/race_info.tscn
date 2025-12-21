@@ -1,0 +1,108 @@
+[gd_scene load_steps=3 format=3 uid="uid://brhjye8nnpflx"]
+
+[ext_resource type="Script" uid="uid://bvo3aenqd1sy8" path="res://scripts/race_info.gd" id="1_4cr3b"]
+[ext_resource type="Theme" uid="uid://cbfe0cuudh8il" path="res://UI/main.tres" id="1_glpqb"]
+
+[node name="Race Info" type="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_4cr3b")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.3529412, 0.73333335, 0.8156863, 0.5529412)
+
+[node name="LevelName" type="Label" parent="Background"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.28087154
+anchor_top = 0.04664819
+anchor_right = 0.7191285
+anchor_bottom = 0.16631487
+offset_left = 115.935974
+offset_top = 13.771973
+offset_right = -115.936035
+offset_bottom = -13.772034
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_glpqb")
+theme_override_font_sizes/font_size = 50
+text = "LEVEL NAME"
+metadata/_edit_use_anchors_ = true
+
+[node name="NRings" type="Label" parent="Background"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3394097
+anchor_top = 0.18209876
+anchor_right = 0.62788194
+anchor_bottom = 0.34672838
+offset_right = -0.3199997
+offset_bottom = 0.3199997
+theme = ExtResource("1_glpqb")
+theme_override_font_sizes/font_size = 35
+text = "There are _ Rings"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="race_results_list" type="ItemList" parent="Background"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3237847
+anchor_top = 0.4830247
+anchor_right = 0.6927083
+anchor_bottom = 1.0015432
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_glpqb")
+metadata/_edit_use_anchors_ = true
+
+[node name="Race Results" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4066459
+anchor_top = 0.3472222
+anchor_right = 0.6336806
+anchor_bottom = 0.48737037
+offset_left = 0.5439453
+offset_bottom = 0.18399811
+grow_horizontal = 0
+theme = ExtResource("1_glpqb")
+text = "Previous Race Results"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RaceTime" type="Label" parent="Background"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4066459
+anchor_top = 0.28395063
+anchor_right = 0.6336806
+anchor_bottom = 0.4240988
+offset_left = 0.5439453
+offset_bottom = 0.18399811
+grow_horizontal = 0
+theme = ExtResource("1_glpqb")
+text = "Previous Time"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

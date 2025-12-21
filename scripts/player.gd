@@ -27,6 +27,8 @@ extends CharacterBody3D
 @export var air_cap: float = 0.85
 @export var auto_behop: bool = true
 
+@export var race_info: Control
+
 # Variables
 var is_captured: bool = false
 var headbob_time: float = 0.0
@@ -46,6 +48,7 @@ var current_speed: float = base_speed
 var race_start: bool = false
 
 func _ready():
+	race_info.load_results()
 	$vel.text = str(velocity)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	is_captured = true

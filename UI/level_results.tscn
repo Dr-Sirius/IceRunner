@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://cbfe0cuudh8il" path="res://UI/main.tres" id="1_fnq66"]
 
 [node name="Level Results" type="Control"]
+process_mode = 3
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_8hbl7")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -32,6 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
+theme = ExtResource("1_fnq66")
 metadata/_edit_use_anchors_ = true
 
 [node name="Race Results" type="Label" parent="Background"]

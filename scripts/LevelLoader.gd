@@ -7,6 +7,7 @@ signal restart_level
 signal start
 signal main_menu
 
+var save_data: Dictionary[String,Dictionary] = {}
 
 func _ready() -> void:
 	
@@ -14,12 +15,15 @@ func _ready() -> void:
 		func():
 			current_level_info = load("res://Levels/Level_info/level_1.tres")
 			get_tree().change_scene_to_packed(current_level_info.current_level)
+			
 	)
 	
 	next_level.connect(
 		func():
+			current_level_info.save_results()
 			current_level_info = current_level_info.next_level
 			get_tree().change_scene_to_packed(current_level_info.current_level)
+			
 	)
 	
 	restart_level.connect(

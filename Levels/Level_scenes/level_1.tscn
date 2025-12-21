@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://bmk77sjk1444o"]
+[gd_scene load_steps=14 format=3 uid="uid://bmk77sjk1444o"]
 
 [ext_resource type="Material" uid="uid://dguhoh6oa2b8n" path="res://assets/Ice003_1K-JPG/Ice003_1K-JPG.tres" id="1_ohook"]
 [ext_resource type="Script" uid="uid://bsfy1m5iuisrn" path="res://scripts/rings.gd" id="2_fwra4"]
 [ext_resource type="PackedScene" uid="uid://bq67n376nrrfv" path="res://Racers/RaceRing.tscn" id="3_6xyyq"]
-[ext_resource type="Script" uid="uid://d2xa2dxctif5j" path="res://scripts/race_ring.gd" id="4_1gc1e"]
 [ext_resource type="Script" uid="uid://dnei57f0b42tj" path="res://scripts/create_rings.gd" id="5_sggex"]
 [ext_resource type="PackedScene" uid="uid://bv4wvc0fg51in" path="res://Racers/player.tscn" id="6_6xyyq"]
 [ext_resource type="PackedScene" uid="uid://bwos5cjp82ifw" path="res://Racers/Racer.tscn" id="7_1gc1e"]
@@ -65,25 +64,20 @@ shape = SubResource("ConvexPolygonShape3D_fttkn")
 [node name="Rings" type="Node3D" parent="."]
 script = ExtResource("2_fwra4")
 
-[node name="RaceRing" type="Node3D" parent="Rings" instance=ExtResource("3_6xyyq")]
+[node name="RaceRing" parent="Rings" instance=ExtResource("3_6xyyq")]
 transform = Transform3D(1.70139, 0, -4.7016244, 0, 5, 0, 4.7016244, 0, 1.70139, 23.602385, 11.878052, 0.701268)
-script = ExtResource("4_1gc1e")
 
-[node name="@Node3D@55065" type="Node3D" parent="Rings" instance=ExtResource("3_6xyyq")]
+[node name="@Node3D@55065" parent="Rings" instance=ExtResource("3_6xyyq")]
 transform = Transform3D(-0.467771, 0, -4.9780707, 0, 5, 0, 4.9780707, 0, -0.467771, 42.524532, 11.878052, -6.146141)
-script = ExtResource("4_1gc1e")
 
-[node name="@Node3D@55066" type="Node3D" parent="Rings" instance=ExtResource("3_6xyyq")]
+[node name="@Node3D@55066" parent="Rings" instance=ExtResource("3_6xyyq")]
 transform = Transform3D(-0.50467, 0, -4.974466, 0, 5, 0, 4.974466, 0, -0.50467, 54.821194, 11.878052, 5.541778)
-script = ExtResource("4_1gc1e")
 
-[node name="@Node3D@55067" type="Node3D" parent="Rings" instance=ExtResource("3_6xyyq")]
+[node name="@Node3D@55067" parent="Rings" instance=ExtResource("3_6xyyq")]
 transform = Transform3D(1.5968783, 0, -4.7381406, 0, 4.9999995, 0, 4.7381406, 0, 1.5968783, 69.06586, 11.878052, -3.9546568)
-script = ExtResource("4_1gc1e")
 
-[node name="@Node3D@55068" type="Node3D" parent="Rings" instance=ExtResource("3_6xyyq")]
+[node name="@Node3D@55068" parent="Rings" instance=ExtResource("3_6xyyq")]
 transform = Transform3D(1.0998267, 0, 4.877538, 0, 5, 0, -4.877538, 0, 1.0998267, 95.48541, 11.878052, 0.18481474)
-script = ExtResource("4_1gc1e")
 
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.878055, 0)

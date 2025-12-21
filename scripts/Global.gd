@@ -26,6 +26,9 @@ func _process(delta: float) -> void:
 		race_fin = true
 		race_finished.emit(race_results,time)
 		
+		
 
 func start_race(val:float):
 	race_start.emit(val)
+	race_fin = false
+	race_results = []

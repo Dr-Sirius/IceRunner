@@ -1,0 +1,98 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjkyw21b8xbrj"]
+
+[ext_resource type="Theme" uid="uid://cbfe0cuudh8il" path="res://UI/main.tres" id="1_6rmtc"]
+[ext_resource type="Script" uid="uid://c3pkhftq2bd81" path="res://UI/race_countdown.gd" id="1_dv2xf"]
+
+[node name="race_countdown" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_dv2xf")
+
+[node name="3" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47599998
+anchor_top = 0.054012347
+anchor_right = 0.523
+anchor_bottom = 0.20801236
+offset_left = -0.35198975
+offset_right = -0.49597168
+offset_bottom = 0.20799255
+grow_horizontal = 2
+theme = ExtResource("1_6rmtc")
+theme_override_colors/font_color = Color(0.9807152, 0, 0.11498848, 1)
+theme_override_font_sizes/font_size = 100
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="2" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47599998
+anchor_top = 0.054012347
+anchor_right = 0.523
+anchor_bottom = 0.20801236
+offset_left = -0.35198975
+offset_right = -0.49597168
+offset_bottom = 0.20799255
+grow_horizontal = 2
+theme = ExtResource("1_6rmtc")
+theme_override_colors/font_color = Color(0.9665505, 0.80369633, 0.09669561, 1)
+theme_override_font_sizes/font_size = 100
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="1" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47599998
+anchor_top = 0.054012347
+anchor_right = 0.523
+anchor_bottom = 0.20801236
+offset_left = -0.35198975
+offset_right = -0.49597168
+offset_bottom = 0.20799255
+grow_horizontal = 2
+theme = ExtResource("1_6rmtc")
+theme_override_colors/font_color = Color(0.42457443, 0.8533185, 0.45420682, 1)
+theme_override_font_sizes/font_size = 100
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="go" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47599998
+anchor_top = 0.054012347
+anchor_right = 0.523
+anchor_bottom = 0.20801236
+offset_left = -0.35198975
+offset_right = -0.49597168
+offset_bottom = 0.20799255
+grow_horizontal = 2
+theme = ExtResource("1_6rmtc")
+theme_override_colors/font_color = Color(9.62615e-07, 0.8424496, 0.8858803, 1)
+theme_override_font_sizes/font_size = 100
+text = "GO!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.2
+one_shot = true

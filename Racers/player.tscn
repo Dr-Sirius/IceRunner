@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bv4wvc0fg51in"]
+[gd_scene load_steps=13 format=3 uid="uid://bv4wvc0fg51in"]
 
 [ext_resource type="Script" uid="uid://5a5p01lio7r" path="res://scripts/player.gd" id="1_4flbx"]
 [ext_resource type="Shader" uid="uid://yskg3xucdrgy" path="res://addons/psx_camera/psx_camera_shader.gdshader" id="2_onrkg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cb5bi2my806xy" path="res://scripts/ring_type.gd" id="4_hqtel"]
 [ext_resource type="PackedScene" uid="uid://bysbak8wjcc05" path="res://UI/level_results.tscn" id="5_wv6l8"]
 [ext_resource type="PackedScene" uid="uid://brhjye8nnpflx" path="res://UI/race_info.tscn" id="6_wv6l8"]
+[ext_resource type="PackedScene" uid="uid://bjkyw21b8xbrj" path="res://UI/race_countdown.tscn" id="7_ygq75"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
@@ -73,5 +74,8 @@ LevelResults = NodePath("../Level Results")
 
 [node name="Level Results" parent="." instance=ExtResource("5_wv6l8")]
 
-[node name="Race Info" parent="." instance=ExtResource("6_wv6l8")]
+[node name="Race Info" parent="." node_paths=PackedStringArray("countdown") instance=ExtResource("6_wv6l8")]
 visible = false
+countdown = NodePath("../race_countdown")
+
+[node name="race_countdown" parent="." instance=ExtResource("7_ygq75")]

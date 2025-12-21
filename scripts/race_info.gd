@@ -5,6 +5,8 @@ extends Control
 @onready var n_rings: Label = %NRings
 @onready var race_time: Label = %RaceTime
 
+@export var countdown: Countdown
+
 
 var nring_text: String = "There are _ Rings"
 var prev_time: String = "Previous Time - _"
@@ -32,8 +34,11 @@ func load_results():
 	tween.tween_property(self,"modulate",a_mod,0.5)
 	tween.stop()
 	print("fin")
-	tween.tween_property(self,"modulate",b_mod,0.5).set_delay(1)
+	tween.tween_property(self,"modulate",b_mod,0.5).set_delay(1) 
 	tween.play()
+	await tween.finished
+	countdown.countdown()
+	
 	
 	
 	

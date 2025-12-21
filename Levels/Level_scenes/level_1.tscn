@@ -86,13 +86,11 @@ script = ExtResource("5_sggex")
 
 [node name="Player" parent="." instance=ExtResource("6_6xyyq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.093438, 11.988848, -0.32288742)
-visible = false
 floor_stop_on_slope = false
 speed = 10.0
 sprint_speed = 15.0
 air_move_speed = 2.0
 air_accel = 10.0
-ground_friction = 1.0
 auto_behop = false
 
 [node name="CharacterBody3D2" parent="." node_paths=PackedStringArray("race_path_node") instance=ExtResource("7_1gc1e")]

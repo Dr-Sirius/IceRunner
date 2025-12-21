@@ -11,8 +11,10 @@ config_version=5
 [application]
 
 config/name="Ice Runner"
+run/main_scene="uid://do8h1xftv8rd2"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=1000
 
 [autoload]
 

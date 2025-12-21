@@ -1,5 +1,7 @@
 extends Node
 
+const DEBUG: bool = false
+
 signal player_finished
 
 signal player_wrong_way
@@ -12,6 +14,8 @@ var rings_passed: int = 0
 var n_rings: int = 0
 var race_fin: bool = false
 var time: float = 0
+
+
 
 func _ready() -> void:
 	DebugConsole.set_pause_on_open(true)

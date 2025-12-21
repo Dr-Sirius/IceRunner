@@ -21,6 +21,7 @@ boot_splash/minimum_display_time=1000
 Global="*res://scripts/Global.gd"
 debug_console="*res://addons/copper_dc/debug_console.tscn"
 LevelLoader="*res://scripts/LevelLoader.gd"
+DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
 
 [display]
 
@@ -29,7 +30,7 @@ window/size/window_height_override=600
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/copper_dc/plugin.cfg", "res://addons/gwj_countdown/plugin.cfg", "res://addons/scene_object_brush/plugin.cfg")
+enabled=PackedStringArray("res://addons/copper_dc/plugin.cfg", "res://addons/debug_menu/plugin.cfg", "res://addons/gwj_countdown/plugin.cfg", "res://addons/scene_object_brush/plugin.cfg")
 
 [global_group]
 

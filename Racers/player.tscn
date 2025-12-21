@@ -37,6 +37,7 @@ size = Vector3(1.5332031, 2.3181152, 1.5527344)
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("head", "camera", "race_info")]
 script = ExtResource("1_4flbx")
+jumps = 0
 head = NodePath("Head")
 camera = NodePath("Head/Camera3D")
 ground_friction = 0.01
@@ -60,6 +61,7 @@ skeleton = NodePath("../..")
 
 [node name="vel" type="Label" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 

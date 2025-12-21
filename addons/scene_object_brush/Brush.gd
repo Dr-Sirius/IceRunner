@@ -116,7 +116,8 @@ func queue_free_draw(mesh_instance: MeshInstance3D, persist_frames: int):
 	self.add_child(mesh_instance)
 	
 	for i in range(persist_frames):
-		await get_tree().process_frame
+		if !i:
+			await get_tree().process_frame
 	
 	if(is_instance_valid(mesh_instance)):
 		mesh_instance.queue_free()

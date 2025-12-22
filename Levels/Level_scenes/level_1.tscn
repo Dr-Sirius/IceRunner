@@ -42,10 +42,10 @@ points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 
 
 [sub_resource type="Curve3D" id="Curve3D_822i5"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 23.602385, -2.861023e-06, 0.701268, 0, 0, 0, 0, 0, 0, 42.524532, -2.861023e-06, -6.146141, 0, 0, 0, 0, 0, 0, 54.821194, -2.861023e-06, 5.541778, 0, 0, 0, 0, 0, 0, 69.06586, -2.861023e-06, -3.9546568, 0, 0, 0, 0, 0, 0, 95.48541, -2.861023e-06, 0.18481474),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 105.470276, 0.00011920929, 5.807142, 0, 0, 0, 0, 0, 0, 180.35645, -14.15871, -10.3962965, 0, 0, 0, 0, 0, 0, 258.3081, -26.27686, -26.599735, 0, 0, 0, 0, 0, 0, 316.11496, -27.918667, 7.120933, 0, 0, 0, 0, 0, 0, 367.7908, -31.341133, 60.110558, 0, 0, 0, 0, 0, 0, 490.336, -82.63003, 35.1485, 0, 0, 0, 0, 0, 0, 612.86176, -93.18837, 38.960995),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 5
+point_count = 7
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6xyyq"]
 lifetime_randomness = 0.84
@@ -113,7 +113,7 @@ curve = SubResource("Curve3D_822i5")
 script = ExtResource("5_sggex")
 
 [node name="Player" parent="." instance=ExtResource("6_6xyyq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.093438, 11.988848, -0.32288742)
+transform = Transform3D(-0.23995697, 0, -0.97078353, 0, 1, 0, 0.97078353, 0, -0.23995697, 7.093438, 11.988848, -0.32288742)
 floor_stop_on_slope = false
 speed = 10.0
 sprint_speed = 15.0
@@ -173,7 +173,6 @@ size = Vector3(158.11462, 5.4659424, 18.177246)
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.9235, 19.181927, 0)
-visible = false
 amount = 2048
 lifetime = 20.0
 randomness = 0.22
@@ -182,7 +181,6 @@ draw_pass_1 = SubResource("BoxMesh_1gc1e")
 
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5753937, 19.181927, 0)
-visible = false
 amount = 2048
 lifetime = 20.0
 randomness = 0.22
@@ -191,7 +189,6 @@ draw_pass_1 = SubResource("BoxMesh_1gc1e")
 
 [node name="GPUParticles3D3" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.51822, 19.181927, 0)
-visible = false
 amount = 2048
 lifetime = 20.0
 randomness = 0.22
@@ -199,7 +196,6 @@ process_material = SubResource("ParticleProcessMaterial_6xyyq")
 draw_pass_1 = SubResource("BoxMesh_1gc1e")
 
 [node name="Trees" type="Node3D" parent="."]
-visible = false
 
 [node name="Brush_1766295306_36765" parent="Trees" instance=ExtResource("12_sq2h6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.226095, 10.652609, -34.596325)

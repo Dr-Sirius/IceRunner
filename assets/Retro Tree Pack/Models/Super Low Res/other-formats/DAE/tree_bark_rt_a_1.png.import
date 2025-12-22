@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bi74jm5fe4ax7"
 path.s3tc="res://.godot/imported/tree_bark_rt_a_1.png-e9f12630ed399a61b62a32d8c4122349.s3tc.ctex"
+path.etc2="res://.godot/imported/tree_bark_rt_a_1.png-e9f12630ed399a61b62a32d8c4122349.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/Retro Tree Pack/Models/Super Low Res/other-formats/DAE/tree_bark_rt_a_1.png"
-dest_files=["res://.godot/imported/tree_bark_rt_a_1.png-e9f12630ed399a61b62a32d8c4122349.s3tc.ctex"]
+dest_files=["res://.godot/imported/tree_bark_rt_a_1.png-e9f12630ed399a61b62a32d8c4122349.s3tc.ctex", "res://.godot/imported/tree_bark_rt_a_1.png-e9f12630ed399a61b62a32d8c4122349.etc2.ctex"]
 
 [params]
 

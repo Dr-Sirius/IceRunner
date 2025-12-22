@@ -15,4 +15,4 @@ ao_texture = ExtResource("AmbientOcclusion")
 ao_texture_channel = 4
 heightmap_scale = 1.0
 heightmap_texture = ExtResource("Displacement")
-uv1_scale = Vector3(-6.045, -6.045, -6.045)
+uv1_scale = Vector3(-1.675, 6, 6)

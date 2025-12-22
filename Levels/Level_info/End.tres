@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LevelInfo" load_steps=3 format=3 uid="uid://bcymi4fv2wbv7"]
+
+[ext_resource type="Script" uid="uid://b330lxa7fldqs" path="res://scripts/level_info.gd" id="1_1qfxa"]
+[ext_resource type="PackedScene" uid="uid://d2tiatf4nvwaw" path="res://UI/thank.tscn" id="1_i1yy5"]
+
+[resource]
+script = ExtResource("1_1qfxa")
+name = "End"
+current_level = ExtResource("1_i1yy5")
+metadata/_custom_type_script = "uid://b330lxa7fldqs"

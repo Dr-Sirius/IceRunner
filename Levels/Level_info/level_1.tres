@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_jh0gw")
-name = "Level 1"
+name = "Level 1 - Forwards and Onwards"
 current_level = ExtResource("1_fuswp")
 next_level = ExtResource("2_xf47t")
 metadata/_custom_type_script = "uid://b330lxa7fldqs"

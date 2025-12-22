@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cde1phekb37y8"
 path.s3tc="res://.godot/imported/tree_rt_4_tree_bark_rt_a.png-b4ecad2902ab59c99646a560aa04c8cd.s3tc.ctex"
+path.etc2="res://.godot/imported/tree_rt_4_tree_bark_rt_a.png-b4ecad2902ab59c99646a560aa04c8cd.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/Retro Tree Pack/Models/Super Low Res/GLB/tree_rt_4_tree_bark_rt_a.png"
-dest_files=["res://.godot/imported/tree_rt_4_tree_bark_rt_a.png-b4ecad2902ab59c99646a560aa04c8cd.s3tc.ctex"]
+dest_files=["res://.godot/imported/tree_rt_4_tree_bark_rt_a.png-b4ecad2902ab59c99646a560aa04c8cd.s3tc.ctex", "res://.godot/imported/tree_rt_4_tree_bark_rt_a.png-b4ecad2902ab59c99646a560aa04c8cd.etc2.ctex"]
 
 [params]
 

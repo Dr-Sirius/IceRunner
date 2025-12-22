@@ -1,0 +1,54 @@
+[gd_resource type="StandardMaterial3D" load_steps=11 format=3 uid="uid://5krk7pyg3mcm"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mxbma"]
+load_path = "res://.godot/imported/Grass002_1K-JPG_Color.jpg-ddb5156596641ee23f8f16906822c106.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3rvh3"]
+load_path = "res://.godot/imported/Grass002_1K-JPG_AmbientOcclusion.jpg-db6971f639f0300c39cb982cde527f88.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y7pw8"]
+load_path = "res://.godot/imported/Grass002_1K-JPG_Displacement.jpg-990f5332a6ff5725cda795f660871c38.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mvqae"]
+load_path = "res://.godot/imported/pixel_ice.jpg-51d5b9b5dc48ce2207fdfe6ff0ddfae4.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_16y0o"]
+load_path = "res://.godot/imported/Ice003_1K-JPG_Displacement.jpg-7b694e92733c20dc24913dea5a2e500d.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c2omu"]
+load_path = "res://.godot/imported/Ice003_1K-JPG_NormalGL.jpg-1997e1ed5d396eae3309749b2ab8f9a2.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j32yp"]
+load_path = "res://.godot/imported/Ice003_1K-JPG_Roughness.jpg-6767dea13411a9167c77037550b76ef1.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcwgv"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(1, 1, 1, 0.33333334)
+albedo_texture = SubResource("CompressedTexture2D_mvqae")
+roughness_texture = SubResource("CompressedTexture2D_j32yp")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_c2omu")
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = SubResource("CompressedTexture2D_16y0o")
+uv1_scale = Vector3(50, 50, 50)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_es4jt"]
+load_path = "res://.godot/imported/Grass002_1K-JPG_NormalGL.jpg-eb5f567efee3a775dd706b6e7904b160.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_euryl"]
+load_path = "res://.godot/imported/Grass002_1K-JPG_Roughness.jpg-2eb9366fc36b3f6ddb809fbb7b151af4.s3tc.ctex"
+
+[resource]
+next_pass = SubResource("StandardMaterial3D_qcwgv")
+albedo_texture = SubResource("CompressedTexture2D_mxbma")
+roughness_texture = SubResource("CompressedTexture2D_euryl")
+roughness_texture_channel = 4
+normal_texture = SubResource("CompressedTexture2D_es4jt")
+ao_texture = SubResource("CompressedTexture2D_3rvh3")
+ao_texture_channel = 4
+heightmap_scale = 1.0
+heightmap_texture = SubResource("CompressedTexture2D_y7pw8")
+uv1_scale = Vector3(-1.675, 6, 6)

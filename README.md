@@ -31,7 +31,7 @@ The game is incomplete and does not have
 
 Most likely not, I may comeback to it ever so often just to mess around and test ideas.
 
-As stated this was simply only for a game jam and really had no purpose except only to further hone my skill and be a learning experience.
+As stated this was simply only for a game jam and really had no purpose except only to further hone my skills and to be a learning experience.
 
 
 ## Credits

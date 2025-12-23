@@ -48,7 +48,7 @@ Thank you ambientcg for the ice and grass textures!
 - [ice 003](https://ambientcg.com/a/Ice003) by ambientcg
 - [grass 002](https://ambientcg.com/a/Ice003) by ambientcg
 
-Thank you for the amazing addons authors!
+Thank you for the amazing addons!
 - [copper dc](https://github.com/Ratamacue9112/CopperDC) by Ratamacue9112
 - [godot debug menu](https://github.com/godot-extended-libraries/godot-debug-menu) by godot-extended-libraries
 - [gwj countdown](https://github.com/Maaack/gwj-countdown-plugin) by Maaack

@@ -8,7 +8,8 @@ Ice Runner is a game initially developed for the [Godot Wild Jam #88](https://it
 
 Ice Runner is a classic arcade style racer where you play as a penguin (currently no such model in the game) racing other penguins. The goal? Get the best time and get first place. You race on icy ponds and lakes, as well as mountains and tundras!
 
-![](https://github.com/Dr-Sirius/IceRunner/tree/main/assets/screenshots/in_game1.png)
+!["Shot"](https://github.com/Dr-Sirius/IceRunner/blob/main/assets/screenshots/in_game1.png)
+
 <sup>Screen Shot from an in game level</sup>
 
 ## Getting Started

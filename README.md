@@ -32,3 +32,25 @@ The game is incomplete and does not have
 Most likely not, I may comeback to it ever so often just to mess around and test ideas.
 
 As stated this was simply only for a game jam and really had no purpose except only to further hone my skill and be a learning experience.
+
+
+## Credits
+
+Thank you to Pizza Doggy for the Trees!
+
+- [Retro Tree Pack](https://pizzadoggy.itch.io/retro-tree-pack) by Pizza Doggy
+
+Thank you to Szymon Furjan for the amazing font!
+
+- [Morning Breezee](https://github.com/Dr-Sirius/IceRunner/blob/main/assets/fonts/readme.txt) by Szymon Furjan
+
+Thank you ambientcg for the ice and grass textures!
+- [ice 003](https://ambientcg.com/a/Ice003) by ambientcg
+- [grass 002](https://ambientcg.com/a/Ice003) by ambientcg
+
+Thank you for the amazing addons authors!
+- [copper dc](https://github.com/Ratamacue9112/CopperDC) by Ratamacue9112
+- [godot debug menu](https://github.com/godot-extended-libraries/godot-debug-menu) by godot-extended-libraries
+- [gwj countdown](https://github.com/Maaack/gwj-countdown-plugin) by Maaack
+- [psx camera](https://github.com/immaculate-lift-studio/PSX-Style-Camera-Shader) by immaculate-lift-studio
+- [scene object brush](https://github.com/Sacristan/godot_scene_object_brush) by Sacristan

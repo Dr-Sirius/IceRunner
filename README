@@ -1,10 +1,12 @@
 # Ice Runner
 ## About
-Ice Runner is a game initially devoloped for the [Godot Wild Jam #88](https://itch.io/jam/godot-wild-jam-88). The game was however unable to be submitted in time. As such I thought it would be a great idea to  open source the project, both as a gift to the community and a sort of portfolio piece.
+Ice Runner is a game initially developed for the [Godot Wild Jam #88](https://itch.io/jam/godot-wild-jam-88). The game was however unable to be submitted in time. As such I thought it would be a great idea to  open source the project, both as a gift to the community and a sort of portfolio piece.
 
+## What Kind of Game is Ice Runner?
+Ice Runner is a classic arcade style racer where you play as a penguin (currently no such model in the game) racing other penguins. The goal? Get the best time and get first place. You race on icy ponds and lakes, as well as mountains and tundras!
 
 ![in_game1](_images/in_game1.png "In Game Screen Shot 1")
-<sup>Screen Shot from an ingame level</sup>
+<sup>Screen Shot from an in game level</sup>
 
 ## Getting Started
 The game uses Godot version 4.5.1 which you can get from [here](https://godotengine.org/download/). It does not use the .NET version of Godot, however it should still work.
